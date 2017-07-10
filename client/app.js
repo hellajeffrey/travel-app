@@ -9,3 +9,13 @@ angular.module('TravelApp', ["ui.router", 'ng-token-auth'])
             apiUrl: '/'
         });
     });
+
+router.$inject = ["$stateProvider", "$urlRouterProvider"];
+function router($stateProvider, $urlRouterProvider){
+  $stateProvider
+    .state("home", {
+      url:"/",
+      template: "<flights></flights>"
+    });
+  $urlRouterProvider.otherwise("/");
+}
