@@ -1,8 +1,8 @@
 <form ng-submit="$ctrl.getFlight()" role="form">
-    <legend>Flights</legend>
-
+    <legend>Flight Search</legend>
+    <br>
     <div class="form-group">
-        <label for="">Origin</label>
+        <label for="">origin</label>
         <input ng-model="$ctrl.origin">
 
         <label for="">destination</label>
@@ -14,18 +14,13 @@
         <label for="">maxStops</label>
         <input ng-model="$ctrl.maxStops">
 
-        <label for="">passengers</label>
+        <label for="">travelers</label>
         <input ng-model="$ctrl.passengers">
 
-        <label for="">Cabin</label>
-        <input ng-model="$ctrl.preferredCabin">
-
     </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <br>
+    <button type="submit" class="btn btn-primary">Search</button>
 </form>
-
-
 
 <div>
     <ul class="list-group" ng-repeat="trip in $ctrl.results">

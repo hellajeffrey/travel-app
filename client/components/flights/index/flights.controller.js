@@ -2,12 +2,11 @@ FlightsController.$inject = ["flightsService"];
 function FlightsController(flightsService) {
   var vm = this;
   vm.getFlight = getFlight;
-  vm.origin = '';
-  vm.destination = '';
-  vm.date = '2017-08-05';
+  vm.origin = 'ATL';
+  vm.destination = 'AMS';
+  vm.date = '2017-10-10';
   vm.maxStops = 0;
   vm.passengers = 1;
-  vm.preferredCabin = "COACH";
 
   vm.results = [];
 
