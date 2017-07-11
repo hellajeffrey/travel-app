@@ -37,7 +37,7 @@
             <li class="list-group-item">
                 <ul class="list-group">
                     <li class="list-group-item" ng-repeat="flight in trip.slice[0].segment">
-                        <p>Flight Duration: {{flight.duration}} minutes</p>
+                        <p>Flight Duration: {{flight.duration | duration}}</p>
                         <br>
                         <p>Origin: {{flight.leg[0].origin}}</p>
                         <br>
