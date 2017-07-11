@@ -23,14 +23,14 @@ function flightsService($http) {
       }
     }
 
-return $http.post("https://www.googleapis.com/qpxExpress/v1/trips/search?fields=trips&key=AIzaSyBzB" +
-    "iHJ_EnQY6gQoy-95X--KGjLWMlLz8A", json)
-    .then(function(res) {
-      return res.data;
-    })
+    return $http.post("https://www.googleapis.com/qpxExpress/v1/trips/search?fields=trips&key=AIzaSyBzB" +
+      "iHJ_EnQY6gQoy-95X--KGjLWMlLz8A", json)
+      .then(function(res) {
+        return res.data;
+      })
   }
 }
 
 angular
-  .module("TunrApp")
+  .module("TravelApp")
   .service("flightsService", flightsService);

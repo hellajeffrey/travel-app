@@ -1,4 +1,4 @@
-import flightsComponent from "./flights.controller";
+import flightsController from "./flights.controller";
 import flightsTemplate from "./flights.html";
 
 const flightsComponent = {

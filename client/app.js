@@ -8,7 +8,8 @@ angular.module('TravelApp', ["ui.router", 'ng-token-auth'])
         $authProvider.configure({
             apiUrl: '/'
         });
-    });
+    })
+    .config(router);
 
 router.$inject = ["$stateProvider", "$urlRouterProvider"];
 function router($stateProvider, $urlRouterProvider){
