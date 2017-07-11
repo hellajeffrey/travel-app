@@ -1,34 +1,37 @@
 <div class="flights-containter">
-    <div class="search-form">
-        <form ng-submit="$ctrl.getFlight()" role="form">
-            <legend>Flights</legend>
+    <button class="btn btn-primary" ng-click="$ctrl.toggleFlightStatus('oneWay')">One Way</button>
+    <button class="btn btn-danger" ng-click="$ctrl.toggleFlightStatus('roundTrip')">Roundtrip</button>
+    <form ng-submit="$ctrl.getFlight()" role="form">
+        <legend>Flight Search</legend>
+        <br>
+        <div class="form-group">
+            <label for="">origin</label>
+            <input ng-model="$ctrl.origin">
 
-            <div class="form-group">
-                <label for="">Origin</label>
-                <input ng-model="$ctrl.origin">
+            <label for="">destination</label>
+            <input ng-model="$ctrl.destination">
 
-                <label for="">destination</label>
-                <input ng-model="$ctrl.destination">
+            <label for="">date</label>
+            <input ng-model="$ctrl.date">
 
-                <label for="">date</label>
-                <input ng-model="$ctrl.date">
+            <label for="">maxStops</label>
+            <input ng-model="$ctrl.maxStops">
 
-                <label for="">maxStops</label>
-                <input ng-model="$ctrl.maxStops">
+            <label for="">travelers</label>
+            <input ng-model="$ctrl.passengers">
 
-                <label for="">passengers</label>
-                <input ng-model="$ctrl.passengers">
+        </div>
+        <br>
+        <div class="form-group" ng-show="$ctrl.roundTrip.show">
+            <label for="">date</label>
+            <input ng-model="$ctrl.roundTrip.date">
 
-                <label for="">Cabin</label>
-                <input ng-model="$ctrl.preferredCabin">
+            <label for="">maxStops</label>
+            <input ng-model="$ctrl.roundTrip.maxStops">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
 
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-
-
+    </form>
 
     <div>
         <ul class="list-group" ng-repeat="trip in $ctrl.results">
