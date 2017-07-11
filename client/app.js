@@ -24,6 +24,10 @@ function router($stateProvider, $urlRouterProvider) {
         .state("flights", {
             url: "/flights",
             template: "<flights></flights>"
+        })
+        .state("signup", {
+            url: "/auth/sign_up",
+            template: "<signup></signup>"
         });
     $urlRouterProvider.otherwise("/");
 }
