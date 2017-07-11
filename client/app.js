@@ -4,13 +4,14 @@ require("ng-token-auth");
 require("angular-cookie");
 
 angular.module('TravelApp', ["ui.router", 'ng-token-auth'])
-    .config(auth, router);
+    .config(router)
+    .config(auth);
 
 auth.$inject = ["$authProvider"]
 
 function auth($authProvider) {
     $authProvider.configure({
-        apiUrl: '/'
+        apiUrl: ''
     });
 }
 router.$inject = ["$stateProvider", "$urlRouterProvider"];
