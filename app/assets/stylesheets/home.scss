@@ -1,11 +1,15 @@
 #home-container {
-    background: url(purple-airplane-wallpaper-1.jpg);
+    text-align: center;
+    background: url(purple-airplane-wallpaper-1.jpg) no-repeat center center fixed;
     background-size: cover;
-    background-repeat: no-repeat;
     height: calc(100vh - 50px);
     width: 100vw;
     margin: 0;
     h1 {
+        color: white;
         margin: 0;
+    }
+    .btn-primary {
+        background-color: rgb(95.7%, 64.3%, 37.6%);
     }
 }
