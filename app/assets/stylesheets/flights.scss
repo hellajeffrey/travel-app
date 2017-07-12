@@ -1,3 +1,26 @@
 // Place all the styles related to the flights controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.flights-container {
+  text-align: center;
+
+  .button-group {
+    margin: 50px;
+  }
+}
+
+form {
+  margin: 30px;
+}
+
+.list-group-item {
+background: rgb(91.7%, 93.2%, 100%)
+}
+
+.price {
+  background: white;
+}
+.details {
+  background: rgb(96.1%, 96.1%, 96.1%);
+}

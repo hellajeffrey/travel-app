@@ -8,7 +8,7 @@ loginController.$inject = ['$auth', '$state'];
     function login() {
       $auth.submitLogin(vm.loginForm)
         .then(function (resp) {
-          $state.go('/flights')
+          $state.go('flights')
         })
         .catch(function (resp) {
           alert(resp)

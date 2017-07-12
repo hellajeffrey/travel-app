@@ -31,7 +31,7 @@ function flightsService($http) {
       })
     }
 
-    return $http.post("https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyBzBiHJ_EnQY6gQoy-95X--KGjLWMlLz8A", trip)
+    return $http.post("https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyBGSAAAZmHkQcKCNVpXNJY-MA5-s1EO5hk", trip)
       .then(function (res) {
         return res.data;
       })
