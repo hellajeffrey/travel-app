@@ -8,8 +8,8 @@ function signUpController($auth, $state) {
   function signUp() {
     $auth.submitRegistration(vm.registrationForm)
       .then(function (resp) {
-        $state.go('/flights')
-
+        console.log('hit');
+        $state.go('flights');
       })
       .catch(function (resp) {
         alert(resp)

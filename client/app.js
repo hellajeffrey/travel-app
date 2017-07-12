@@ -12,7 +12,8 @@ auth.$inject = ["$authProvider"]
 
 function auth($authProvider) {
     $authProvider.configure({
-        apiUrl: ''
+        apiUrl: '',
+        validateOnPageLoad: false
     });
 }
 router.$inject = ["$stateProvider", "$urlRouterProvider"];
