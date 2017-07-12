@@ -5,9 +5,14 @@
     height: calc(100vh - 50px);
     width: 100vw;
     margin: 0;
+    .heading {
+        padding: 7em;
+    }
     h1 {
-        color: white;
+        color: rgba(255, 255, 255, 0.7);
         margin: 0;
+        padding: 30px;
+        font-size: 72px;
     }
     .btn-primary {
         background-color: rgb(95.7%, 64.3%, 37.6%);
