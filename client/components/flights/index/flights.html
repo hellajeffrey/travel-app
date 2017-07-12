@@ -1,57 +1,58 @@
 <div class="flights-containter">
-  <button class="btn btn-primary" ng-click="$ctrl.toggleFlightStatus('oneWay')">One Way</button>
-  <button class="btn btn-danger" ng-click="$ctrl.toggleFlightStatus('roundTrip')">Roundtrip</button>
-  <form ng-submit="$ctrl.getFlight()" role="form">
-    <legend>Flight Search</legend>
-    <br>
-    <div class="form-group">
-      <label for="">origin</label>
-      <input ng-model="$ctrl.origin">
+    <button class="btn btn-primary" ng-click="$ctrl.toggleFlightStatus('oneWay')">One Way</button>
+    <button class="btn btn-danger" ng-click="$ctrl.toggleFlightStatus('roundTrip')">Roundtrip</button>
+    <form ng-submit="$ctrl.getFlight()" role="form">
+        <legend>Flight Search</legend>
+        <br>
+        <div class="form-group">
+            <label for="">origin</label>
+            <input ng-model="$ctrl.origin">
 
-      <label for="">destination</label>
-      <input ng-model="$ctrl.destination">
+            <label for="">destination</label>
+            <input ng-model="$ctrl.destination">
 
-      <label for="">date</label>
-      <input ng-model="$ctrl.date">
+            <label for="">date</label>
+            <input ng-model="$ctrl.date">
 
-      <label for="">maxStops</label>
-      <input ng-model="$ctrl.maxStops">
+            <label for="">maxStops</label>
+            <input ng-model="$ctrl.maxStops">
 
-      <label for="">travelers</label>
-      <input ng-model="$ctrl.passengers">
+            <label for="">travelers</label>
+            <input ng-model="$ctrl.passengers">
 
-    </div>
+        </div>
 
-    <div class="form-group" ng-show="$ctrl.roundTrip.show">
-      <label for="">return date</label>
-      <input ng-model="$ctrl.roundTrip.date">
+        <div class="form-group" ng-show="$ctrl.roundTrip.show">
+            <label for="">return date</label>
+            <input ng-model="$ctrl.roundTrip.date">
 
-    </div>
-    <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
 
-  </form>
+    </form>
 
-  <div>
-    <ul class="list-group" ng-repeat="trip in $ctrl.results">
-      <li class="list-group-item">Sale Total: {{trip.pricing[0].saleTotal}}</li>
-      <li class="list-group-item">
-        <ul class="list-group">
-          <li class="list-group-item" ng-repeat="flight in trip.slice[0].segment">
-            <p>Flight Duration: {{flight.duration}} minutes</p>
-            <br>
-            <p>Origin: {{flight.leg[0].origin}}</p>
-            <br>
-            <p>Destination: {{flight.leg[0].destination}}</p>
-            <br>
-            <p>Departure Time: {{flight.leg[0].departureTime | date: 'medium'}}</p>
-            <br>
-            <p>Arrival Time: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
-            <br>
-            <p ng-show="flight.connectionDuration">Layover Duration: {{flight.connectionDuration}} minutes</p>
-          </li>
+    <div>
+        <ul class="list-group" ng-repeat="trip in $ctrl.results">
+            <li class="list-group-item">Sale Total: {{trip.pricing[0].saleTotal}}</li>
+            <li class="list-group-item">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="flight in trip.slice[0].segment">
+                        <p>Flight Duration: {{flight.duration | duration}}</p>
+                        <br>
+                        <p>Origin: {{flight.leg[0].origin}}</p>
+                        <br>
+                        <p>Destination: {{flight.leg[0].destination}}</p>
+                        <br>
+                        <p>Departure Time: {{flight.leg[0].departureTime | date: 'medium'}}</p>
+                        <br>
+                        <p>Arrival Time: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
+                        <br>
+                        <p ng-show="flight.connectionDuration">Layover Duration: {{flight.connectionDuration}} minutes</p>
+                    </li>
+                </ul>
+            </li>
         </ul>
-      </li>
-    </ul>
 
-  </div>
-</div>
+    </div>
+
+    

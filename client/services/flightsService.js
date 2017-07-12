@@ -39,6 +39,10 @@ function flightsService($http) {
     }
 }
 
+    function flightDuration() {
+
+    };
+
 angular
     .module("TravelApp")
     .service("flightsService", flightsService);
