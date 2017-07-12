@@ -34,7 +34,17 @@ function router($stateProvider, $urlRouterProvider) {
         .state("login", {
             url: "/auth/sign_in",
             template: "<login></login>"
-        });
+        })
+        .state('admin', {
+            url: '/admin',
+            abstract: true,
+            template: '<ui-view/>',
+            resolve: {
+              auth: function($auth) {
+                return $auth.validateUser();
+              }
+            }
+         });
     $urlRouterProvider.otherwise("/");
 }
 
