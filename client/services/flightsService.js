@@ -37,7 +37,6 @@ function flightsService($http) {
       })
   }
 }
-}
 
 function flightDuration() {
 
