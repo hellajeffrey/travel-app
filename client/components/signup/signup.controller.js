@@ -1,33 +1,23 @@
-signUpController.$inject = ['$auth'];
+signUpController.$inject = ['$auth', '$state'];
 
-function signUpController($auth) {
-    const vm = this;
-    vm.registrationForm = {};
-    vm.signUp = signUp;
+function signUpController($auth, $state) {
+  const vm = this;
+  vm.registrationForm = {};
+  vm.signUp = signUp;
 
-    function signUp() {
-        $auth.submitRegistration(vm.registrationForm)
-            .then(function(resp) {
-                // handle success response
+  function signUp() {
+    $auth.submitRegistration(vm.registrationForm)
+      .then(function (resp) {
+        $state.go('/flights')
 
-            })
-            .catch(function(resp) {
-                // handle error response
-            });
-    }
+      })
+      .catch(function (resp) {
+        alert(resp)
+      });
+  }
 }
 
+console.log("signup controller working")
 export default signUpController;
 
-// angular.module('ngTokenAuthTestApp')
-//     .controller('IndexCtrl', function($scope, $auth) {
-//         $scope.handleRegBtnClick = function() {
-//             $auth.submitRegistration($scope.registrationForm)
-//                 .then(function(resp) {
-//                     // handle success response
-//                 })
-//                 .catch(function(resp) {
-//                     // handle error response
-//                 });
-//         };
-//     });
+// https://github.com/lynndylanhurley/ng-token-auth
