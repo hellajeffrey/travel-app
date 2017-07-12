@@ -1,9 +1,9 @@
-import signupController from "./signup.controller";
-import signupTemplate from "./signup.html";
+import signUpController from "./signup.controller";
+import signUpTemplate from "./signup.html";
 
-const signupComponent = {
-    controller: signupController,
-    template: signupTemplate
+const signUpComponent = {
+    controller: signUpController,
+    template: signUpTemplate
 };
 
-angular.module("TravelApp").component("signup", signupComponent);
+angular.module("TravelApp").component("signUp", signUpComponent);
