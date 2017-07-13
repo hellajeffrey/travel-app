@@ -1,7 +1,7 @@
 <div class="flights-container">
     <div class="button-group">
         <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('oneWay')">One Way</button>
-        <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('roundTrip')">Roundtrip</button>
+        <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('roundTrip')">Round Trip</button>
     </div>
     <form ng-submit="$ctrl.getFlight()" role="form">
         <h2>Flight Search</h2>
@@ -33,15 +33,21 @@
 
     </form>
     <div ng-show="$ctrl.selectedFlights.length">
-        <h4 ng-repeat="flight in $ctrl.selectedFlights">Outgoing: {{flight.leg[0].origin}} -
-                                                        {{flight.leg[0].destination}},
-                                                        Duration: {{flight.duration}}mins</h4>
+        <h4 >Outgoing: {{$ctrl.selectedFlights[0].leg[0].origin}} -
+                                                        {{$ctrl.selectedFlights[0].leg[0].destination}} |
+                                                        Duration: {{$ctrl.selectedFlights[0].duration}} mins
+        </h4>
+        <h4 ng-show="$ctrl.selectedFlights[1]">Return: {{$ctrl.selectedFlights[1].leg[0].origin}} -
+                                                        {{$ctrl.selectedFlights[1].leg[0].destination}} |
+                                                        Duration: {{$ctrl.selectedFlights[1].duration}} mins
+        </h4>
+  
     </div>
 
     <div>
         <ul class="list-group" ng-repeat="trip in $ctrl.results">
             <li class="list-group-item price">
-                Sale Total: {{trip.pricing[0].saleTotal}}
+                Sale Total: {{trip.pricing[0].saleTotal.substring(3) | currency}}
             </li>
             <li class="list-group-item">
                 <ul class="list-group">
