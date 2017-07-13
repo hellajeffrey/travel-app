@@ -14,6 +14,7 @@ function FlightsController(flightsService) {
   vm.selectOutgoingFlight = selectOutgoingFlight
   vm.showSelectedFlights = {};
   vm.selectedFlights = [];
+  vm.isLoading = false;
 
   activate();
 
@@ -22,12 +23,14 @@ function FlightsController(flightsService) {
 
   function getFlight() {
     console.log('flights found');
+    vm.isLoading = true;
     return flightsService.getFlight(vm.origin, vm.destination,
                                     vm.date, vm.maxStops,
                                     vm.passengers, vm.roundTrip)
            .then(function(res) {
              console.log(res);
              vm.results = res.trips.tripOption;
+             vm.isLoading = false;
            });
   }
 
