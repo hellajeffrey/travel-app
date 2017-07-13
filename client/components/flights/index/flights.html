@@ -1,10 +1,11 @@
 <div class="flights-container">
+    <div ng-if="$ctrl.incomingFlight">{{$ctrl.incomingFlight.duration}}</div>
+    <div class="button-group">
+        <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('oneWay')">One Way</button>
+        <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('roundTrip')">Roundtrip</button>
+    </div>
     <form ng-submit="$ctrl.getFlight()" role="form">
         <h2>Flight Search</h2>
-            <div class="button-group">
-                <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('oneWay')">One Way</button>
-                <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('roundTrip')">Roundtrip</button>
-            </div>
         <br>
         <div class="form-group">
             <label for="">Origin</label>
@@ -32,6 +33,9 @@
         <button type="submit" class="btn btn-primary">Search</button>
 
     </form>
+    <div ng-show="$ctrl.selectedFlights.length">
+        <h4 ng-repeat="flight in $ctrl.selectedFlights">Duration: {{flight.duration}}, Origin: {{flight.leg[0].origin}}, Destination: {{flight.leg[0].destination}}</h4>
+    </div>
 
     <div>
         <ul class="list-group" ng-repeat="trip in $ctrl.results">
@@ -41,7 +45,7 @@
             <li class="list-group-item">
                 <ul class="list-group">
                     <div ng-hide="$ctrl.roundTrip.showFlights">
-                        <li class="list-group-item" ng-repeat="flight in trip.slice[0].segment" ng-click="$ctrl.selectIncomingFlight()">
+                        <li class="list-group-item" ng-repeat="flight in trip.slice[0].segment" ng-click="$ctrl.selectOutgoingFlight(flight)">
                             <p>Flight Duration: {{flight.duration | duration}}</p>
                             <br>
                             <p>Origin: {{flight.leg[0].origin}}</p>
@@ -56,7 +60,7 @@
                         </li>
                     </div>
                     <div ng-show="$ctrl.roundTrip.showFlights">
-                        <li class="list-group-item" ng-repeat="flight in trip.slice[1].segment" ng-click="$ctrl.selectOutgoingFlight()">
+                        <li class="list-group-item" ng-repeat="flight in trip.slice[1].segment" ng-click="$ctrl.selectIncomingFlight(flight)">
                             <p>Flight Duration: {{flight.duration | duration}}</p>
                             <br>
                             <p>Origin: {{flight.leg[0].origin}}</p>

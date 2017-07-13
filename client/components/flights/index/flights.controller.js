@@ -12,7 +12,8 @@ function FlightsController(flightsService) {
   vm.results = [];
   vm.selectIncomingFlight = selectIncomingFlight
   vm.selectOutgoingFlight = selectOutgoingFlight
-
+  vm.showSelectedFlights = {};
+  vm.selectedFlights = [];
 
   activate();
 
@@ -39,19 +40,31 @@ function FlightsController(flightsService) {
     }
   }
 
-  function selectIncomingFlight() {
+  function selectIncomingFlight(flight) {
+    console.log('hit');
+    vm.incomingFlight = flight;
+    if (vm.roundTrip.show) {
+      vm.roundTrip.showFlights = false;
+    }
+    vm.selectedFlights[1] = flight;
+  }
+
+
+  function selectOutgoingFlight(flight) {
     console.log('hit');
     if (vm.roundTrip.show) {
       vm.roundTrip.showFlights = true;
     }
+    vm.outGoingFlight = flight;
+    vm.selectedFlights[0] = flight;
   }
 
-
-  function selectOutgoingFlight() {
-    console.log('hit');
-    if (vm.roundTrip.show) {
-      vm.roundTrip.showFlights = false;
-    }
+  function showSelectedFlights() {
+    console.log('showing selected flights');
+     if (vm.selectIncomingFlight.selectOutgoingFlight.show) {
+      // vm.results.push[vm.showSelectedFlights]
+      console.log(results)
+     }
   }
 }
 
