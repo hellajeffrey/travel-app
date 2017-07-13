@@ -6,6 +6,7 @@ loginController.$inject = ['$auth', '$state'];
     vm.login = login;
 
     function login() {
+      console.log('login button hit');
       $auth.submitLogin(vm.loginForm)
         .then(function (resp) {
           $state.go('flights')
