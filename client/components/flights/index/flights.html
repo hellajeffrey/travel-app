@@ -33,9 +33,9 @@
 
     </form>
     <div ng-show="$ctrl.selectedFlights.length">
-        <h4 ng-repeat="flight in $ctrl.selectedFlights">Origin: {{flight.leg[0].origin}} -
-                                                        Destination: {{flight.leg[0].destination}} -
-                                                        Duration: {{flight.duration}} mins</h4>
+        <h4 ng-repeat="flight in $ctrl.selectedFlights">Outgoing: {{flight.leg[0].origin}} -
+                                                        {{flight.leg[0].destination}},
+                                                        Duration: {{flight.duration}}mins</h4>
     </div>
 
     <div>
@@ -47,8 +47,6 @@
                 <ul class="list-group">
                     <div ng-hide="$ctrl.roundTrip.showFlights">
                         <li class="list-group-item" ng-repeat="flight in trip.slice[0].segment" ng-click="$ctrl.selectOutgoingFlight(flight)">
-                            <p>Flight Duration: {{flight.duration | duration}}</p>
-                            <br>
                             <p>Origin: {{flight.leg[0].origin}}</p>
                             <br>
                             <p>Destination: {{flight.leg[0].destination}}</p>
@@ -56,14 +54,14 @@
                             <p>Departure Time: {{flight.leg[0].departureTime | date: 'medium'}}</p>
                             <br>
                             <p>Arrival Time: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
+                            <br>
+                            <p>Flight Duration: {{flight.duration | duration}}</p>
                             <br>
                             <p ng-show="flight.connectionDuration">Layover Duration: {{flight.connectionDuration}} minutes</p>
                         </li>
                     </div>
                     <div ng-show="$ctrl.roundTrip.showFlights">
                         <li class="list-group-item" ng-repeat="flight in trip.slice[1].segment" ng-click="$ctrl.selectIncomingFlight(flight)">
-                            <p>Flight Duration: {{flight.duration | duration}}</p>
-                            <br>
                             <p>Origin: {{flight.leg[0].origin}}</p>
                             <br>
                             <p>Destination: {{flight.leg[0].destination}}</p>
@@ -71,6 +69,8 @@
                             <p>Departure Time: {{flight.leg[0].departureTime | date: 'medium'}}</p>
                             <br>
                             <p>Arrival Time: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
+                            <br>
+                            <p>Flight Duration: {{flight.duration | duration}}</p>
                             <br>
                             <p ng-show="flight.connectionDuration">Layover Duration: {{flight.connectionDuration}} minutes</p>
                         </li>
