@@ -41,17 +41,17 @@ function router($stateProvider, $urlRouterProvider) {
             abstract: true,
             template: '<ui-view/>',
             resolve: {
-              auth: function($auth) {
-                return $auth.validateUser();
-              }
+                auth: function ($auth) {
+                    return $auth.validateUser();
+                }
             }
-         });
+        });
     $urlRouterProvider.otherwise("/");
 }
 
-function duration(){
-     return function changeToHours(duration){
-        const hours = Math.floor(duration/60);
+function duration() {
+    return function changeToHours(duration) {
+        const hours = Math.floor(duration / 60);
         const minutes = duration % 60;
         return hours + " hours, and " + minutes + " minutes"
     }
