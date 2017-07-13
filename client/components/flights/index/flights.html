@@ -56,7 +56,7 @@
                         </li>
                     </div>
                     <div ng-show="$ctrl.roundTrip.showFlights">
-                        <li class="list-group-item" ng-repeat="flight in trip.slice[1].segment">
+                        <li class="list-group-item" ng-repeat="flight in trip.slice[1].segment" ng-click="$ctrl.selectOutgoingFlight()">
                             <p>Flight Duration: {{flight.duration | duration}}</p>
                             <br>
                             <p>Origin: {{flight.leg[0].origin}}</p>

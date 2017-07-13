@@ -11,6 +11,8 @@ function FlightsController(flightsService) {
   vm.toggleFlightStatus = toggleFlightStatus;
   vm.results = [];
   vm.selectIncomingFlight = selectIncomingFlight
+  vm.selectOutgoingFlight = selectOutgoingFlight
+
 
   activate();
 
@@ -41,6 +43,14 @@ function FlightsController(flightsService) {
     console.log('hit');
     if (vm.roundTrip.show) {
       vm.roundTrip.showFlights = true;
+    }
+  }
+
+
+  function selectOutgoingFlight() {
+    console.log('hit');
+    if (vm.roundTrip.show) {
+      vm.roundTrip.showFlights = false;
     }
   }
 }
