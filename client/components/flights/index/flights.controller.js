@@ -62,7 +62,6 @@ function FlightsController(flightsService) {
   function showSelectedFlights() {
     console.log('showing selected flights');
      if (vm.selectIncomingFlight.selectOutgoingFlight.show) {
-      // vm.results.push[vm.showSelectedFlights]
       console.log(results)
      }
   }

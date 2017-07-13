@@ -1,5 +1,4 @@
 <div class="flights-container">
-    <div ng-if="$ctrl.incomingFlight">{{$ctrl.incomingFlight.duration}}</div>
     <div class="button-group">
         <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('oneWay')">One Way</button>
         <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('roundTrip')">Roundtrip</button>
@@ -34,7 +33,9 @@
 
     </form>
     <div ng-show="$ctrl.selectedFlights.length">
-        <h4 ng-repeat="flight in $ctrl.selectedFlights">Duration: {{flight.duration}}, Origin: {{flight.leg[0].origin}}, Destination: {{flight.leg[0].destination}}</h4>
+        <h4 ng-repeat="flight in $ctrl.selectedFlights">Origin: {{flight.leg[0].origin}} -
+                                                        Destination: {{flight.leg[0].destination}} -
+                                                        Duration: {{flight.duration}} mins</h4>
     </div>
 
     <div>
