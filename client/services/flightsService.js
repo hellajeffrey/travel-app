@@ -18,7 +18,8 @@ function flightsService($http) {
         ],
         "passengers": {
           "adultCount": passengers
-        }
+        },
+        "solutions": 20
       }
     }
 
