@@ -1,9 +1,20 @@
 <div class="profile-page">
   <div class="profile-panel">
-    <h1>{{$ctrl.user.name}}</h1>
-    {{$ctrl.user.email}}<br>
-    {{$ctrl.user.username}}<br>
-    <img src="{{$ctrl.user.image}}">
+    <div>
+      <h2>{{$ctrl.user.name}}</h2> <i>{{$ctrl.user.username}}</i>
+    </div>
+    <div>
+      ({{$ctrl.user.email}})<br>
+    </div>
+    <div>
+      <img src="{{$ctrl.user.image}}">
+    </div>
+
+    <a ui-sref="edit-profile">Edit Profile</a>
   </div>
-  <a ui-sref="edit-profile">Edit Profile</a>
+
+  <div class="watched-flights">
+    <h2>Watched Flights List</h2>
+    <a ui-sref="flights">(Add a Flight)</a>
+  </div>
 </div>

@@ -4,6 +4,35 @@
 .profile-page, .edit-form {
   background: rgba(255,255,255,0.5);
   border-radius: 10px;
-  margin: 30px;
+  margin: 60px;
   padding: 30px;
+  display: flex;
+  h2 {
+    display: inline;
+  }
+  .profile-panel {
+    width: 50%;
+    div{
+    margin: 10px 0;
+    }
+  }
+  .watched-flights {
+    background: white;
+    width: 50%;
+    position: right;
+    text-align: center;
+    padding: 15px;
+    a {
+      display: block;
+      margin: 20px;
+    }
+  }
+}
+
+.edit-form {
+  text-align: center;
+  margin: 60px;
+  button {
+    margin: 15px;
+  }
 }
