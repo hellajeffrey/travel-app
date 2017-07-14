@@ -42,7 +42,7 @@ function router($stateProvider, $urlRouterProvider) {
         })
         .state("edit-profile", {
             url: "/users/edit",
-            template: "<edit></edit>"
+            template: "<edit-user></edit-user>"
         })
         .state('admin', {
             url: '/admin',
