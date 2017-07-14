@@ -45,16 +45,16 @@
     </form>
     <div class="selected-container" ng-show="$ctrl.selectedFlights.length">
         <div class="selected">
-            <h4>Outgoing:</h4>
+            <h4>Outbound:</h4>
             <h4>{{$ctrl.selectedFlights[0].leg[0].origin}} - {{$ctrl.selectedFlights[0].leg[0].destination}} <br>
                 Total Time:
                 {{$ctrl.selectedFlights[0].duration | duration}}
             </h4>
         </div>
         <div class="selected">
-            <h4>Returning:</h4>
+            <h4>Inbound:</h4>
             <h4 ng-show="$ctrl.selectedFlights[1]">
-                {{$ctrl.selectedFlights[1].leg[0].origin}} - {{$ctrl.selectedFlights[1].leg[0].destination}} <br> 
+                {{$ctrl.selectedFlights[1].leg[0].origin}} - {{$ctrl.selectedFlights[1].leg[0].destination}} <br>
                 Total Time:
                 {{$ctrl.selectedFlights[1].duration | duration}}
             </h4>
