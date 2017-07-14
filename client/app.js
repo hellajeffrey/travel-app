@@ -36,6 +36,14 @@ function router($stateProvider, $urlRouterProvider) {
             url: "/auth/sign_in",
             template: "<login></login>"
         })
+        .state("profile", {
+            url:"/users/profile",
+            template:"<user></user>"
+        })
+        .state("edit-profile", {
+            url: "/users/edit",
+            template: "<edit></edit>"
+        })
         .state('admin', {
             url: '/admin',
             abstract: true,
