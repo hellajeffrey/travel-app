@@ -15,6 +15,8 @@ ___
 
 * AngularJS on Rails
 
+* Google Flights API - QPX Express
+
 * Postgresql/Active Record
 
 * Boostrap
