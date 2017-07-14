@@ -1,13 +1,9 @@
-<h1>IT ME JEF</h1>
-
-<h5>actuallyl... IT ME {{$ctrl.user.email}}</h5>
-
-<form ng-submit="$ctrl.editUser()" role="form">
-    <div>
-        <label>Name: <input type="text" ng-model="$ctrl.user.name" /></label><br />
-        <label>E-mail: <input type="email" ng-model="$ctrl.user.email" /></label><br />
-        <label>Username: <input type="text" ng-model="$ctrl.user.nickname" /></label><br />
-        <label>Profile Picture: <input type="text" ng-model="$ctrl.user.image" /></label><br />
-        <input type="submit" ng-click="update(user)" value="Save" />
-    </div>
-</form>
+<div class="profile-page">
+  <div class="profile-panel">
+    <h1>{{$ctrl.user.name}}</h1>
+    {{$ctrl.user.email}}<br>
+    {{$ctrl.user.username}}<br>
+    <img src="{{$ctrl.user.image}}">
+  </div>
+  <a ui-sref="edit-profile">Edit Profile</a>
+</div>

@@ -1,6 +1,6 @@
-FlightsController.$inject = ["flightsService"];
+FlightsController.$inject = ["flightsService", "$anchorScroll", "$location"];
 
-function FlightsController(flightsService) {
+function FlightsController(flightsService, $anchorScroll, $location) {
     var vm = this;
     vm.getFlight = getFlight;
     vm.origin = '';
@@ -9,6 +9,7 @@ function FlightsController(flightsService) {
     vm.maxStops = 0;
     vm.passengers = 1;
     vm.preferredCabin = "COACH";
+    vm.goToFlights = goToFlights;
 
     vm.results = [];
 
@@ -33,7 +34,26 @@ function FlightsController(flightsService) {
             .then(function(res) {
                 console.log(res);
                 vm.results = res.trips.tripOption;
+                // $location.hash('searchResults');
+                // $anchorScroll();
+                // goToFlights();
             });
     }
+
+    // function goToFlights () {
+    //     // if ($location.hash() !== newHash) {
+    //     // // set the $location.hash to `newHash` and
+    //     // // $anchorScroll will automatically scroll to it
+    //     // $location.hash('anchor' + x);
+    //     // } else {
+    //     //     // call $anchorScroll() explicitly,
+    //     //     // since $location.hash hasn't changed
+    //     //     $anchorScroll();
+    //     // }
+    //     console.log('anchor scroll hit');
+    //     $location.hash('searchResults');
+    //     $anchorScroll();
+    // }
+        
 }
 export default FlightsController;

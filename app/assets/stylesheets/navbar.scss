@@ -1,13 +1,13 @@
 .navbar-right {
   text-align: right;
-  border: solid;
-  height: 50px;
-  padding: calc(50px / 4);;
+  padding: calc(50px / 4);
   
   a{
     color: gray;
   }
-
+  a:hover{
+    text-decoration: none;
+  }
   li {
     display: inline;
   }

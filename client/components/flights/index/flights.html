@@ -4,54 +4,69 @@
         <button class="btn btn-default" ng-click="$ctrl.toggleFlightStatus('roundTrip')">Round Trip</button>
     </div>
     <form ng-submit="$ctrl.getFlight()" role="form">
-        <h2>Flight Search</h2>
-        <flight-card flight="$ctrl.origin"></flight-card>
-        <br>
-        <div class="form-group">
-            <label for="">Origin</label>
-            <input ng-model="$ctrl.origin">
+        <div class="search-field">
+            <h2>Flight Search</h2>
+            <br>
+            <div class="form-group">
+                <div>
+                    <label for="">Origin: </label>
+                    <input ng-model="$ctrl.origin">
+                </div>
 
-            <label for="">Destination</label>
-            <input ng-model="$ctrl.destination">
+                <div>
+                    <label for="">Destination: </label>
+                    <input ng-model="$ctrl.destination">
+                </div>
 
-            <label for="">Date</label>
-            <input ng-model="$ctrl.date">
+                <div>
+                    <label for="">Date: </label>
+                    <input ng-model="$ctrl.date">
+                </div>
 
-            <label for="">Max Stops</label>
-            <input ng-model="$ctrl.maxStops">
+                <div>
+                    <label for="">Max Stops: </label>
+                    <input ng-model="$ctrl.maxStops">
+                </div>
 
-            <label for="">Travelers</label>
-            <input ng-model="$ctrl.passengers">
+                <div>
+                    <label for="">Travelers: </label>
+                    <input ng-model="$ctrl.passengers">
+                </div>
 
-        </div>
+                <div class="form-group" ng-show="$ctrl.roundTrip.show">
+                    <label for="">Return Date: </label>
+                    <input ng-model="$ctrl.roundTrip.date">
+                </div>
+            </div>
 
-        <div class="form-group" ng-show="$ctrl.roundTrip.show">
-            <label for="">Return Date</label>
-            <input ng-model="$ctrl.roundTrip.date">
-
-        </div>
             <button type="submit" class="btn btn-primary">Search</button>
+        </div>
 
     </form>
-        <div ng-show="$ctrl.selectedFlights.length">
-        <h4 >Outbound Flight: {{$ctrl.selectedFlights[0].leg[0].origin}} -
-                                                        {{$ctrl.selectedFlights[0].leg[0].destination}} |
-                                                        Total Time: {{$ctrl.selectedFlights[0].duration | duration}}
-
-        </h4>
-        <h4 ng-show="$ctrl.selectedFlights[1]">Inbound Flight: {{$ctrl.selectedFlights[1].leg[0].origin}} -
-                                                        {{$ctrl.selectedFlights[1].leg[0].destination}} |
-                                                        Total Time: {{$ctrl.selectedFlights[1].duration | duration}}
-        </h4>
-
+    <div class="selected-container" ng-show="$ctrl.selectedFlights.length">
+        <div class="selected">
+            <h4>Outgoing:</h4>
+            <h4>{{$ctrl.selectedFlights[0].leg[0].origin}} - {{$ctrl.selectedFlights[0].leg[0].destination}} <br>
+                Total Time:
+                {{$ctrl.selectedFlights[0].duration | duration}}
+            </h4>
+        </div>
+        <div class="selected">
+            <h4>Returning:</h4>
+            <h4 ng-show="$ctrl.selectedFlights[1]">
+                {{$ctrl.selectedFlights[1].leg[0].origin}} - {{$ctrl.selectedFlights[1].leg[0].destination}} <br> 
+                Total Time:
+                {{$ctrl.selectedFlights[1].duration | duration}}
+            </h4>
+        </div>
     </div>
 
     <div ng-show="$ctrl.isLoading" class="spinner">
-      <div class="dot1"></div>
-      <div class="dot2"></div>
+        <div class="dot1"></div>
+        <div class="dot2"></div>
     </div>
 
-    <div>
+    <div id="searchResults">
         <ul class="list-group" ng-repeat="trip in $ctrl.results">
             <li class="list-group-item price">
                 Total: {{trip.pricing[0].saleTotal.substring(3) | currency}}
