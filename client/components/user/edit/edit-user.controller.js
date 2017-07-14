@@ -22,6 +22,7 @@ function editUserController($auth, $state) {
   function editUser () {
   $auth.updateAccount(vm.updateForm)
     .then(function (res) {
+      $state.go('profile');
       console.log('then hit');
       console.log(res);
     })

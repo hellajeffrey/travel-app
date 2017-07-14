@@ -1,14 +1,26 @@
+.navbar {
+    margin: 0;
+    border-radius: 0;
+    a{
+      color: gray;
+}
+}
+
+.navbar-brand {
+  padding-left: 5px !important;
+}
+
 .navbar-right {
   text-align: right;
   padding: calc(50px / 4);
-  
-  a{
-    color: gray;
-  }
-  a:hover{
-    text-decoration: none;
-  }
+
   li {
     display: inline;
   }
+}
+
+img {
+    display: inline;
+    margin: 0;
+    padding: 7px !important;
 }
