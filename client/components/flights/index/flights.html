@@ -29,19 +29,25 @@
             <input ng-model="$ctrl.roundTrip.date">
 
         </div>
-        <button type="submit" class="btn btn-primary">Search</button>
+            <button type="submit" class="btn btn-primary">Search</button>
 
     </form>
-    <div ng-show="$ctrl.selectedFlights.length">
+        <div ng-show="$ctrl.selectedFlights.length">
         <h4 >Outgoing: {{$ctrl.selectedFlights[0].leg[0].origin}} -
                                                         {{$ctrl.selectedFlights[0].leg[0].destination}} |
-                                                        Duration: {{$ctrl.selectedFlights[0].duration}} mins
+                                                        Total Time: {{$ctrl.selectedFlights[0].duration | duration}}
+
         </h4>
         <h4 ng-show="$ctrl.selectedFlights[1]">Return: {{$ctrl.selectedFlights[1].leg[0].origin}} -
                                                         {{$ctrl.selectedFlights[1].leg[0].destination}} |
-                                                        Duration: {{$ctrl.selectedFlights[1].duration}} mins
+                                                        Total Time: {{$ctrl.selectedFlights[1].duration | duration}}
         </h4>
-  
+
+    </div>
+
+    <div ng-show="$ctrl.isLoading" class="spinner">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
     </div>
 
     <div>
@@ -57,11 +63,11 @@
                             <br>
                             <p>Destination: {{flight.leg[0].destination}}</p>
                             <br>
-                            <p>Departure Time: {{flight.leg[0].departureTime | date: 'medium'}}</p>
+                            <p>Departs: {{flight.leg[0].departureTime | date: 'medium'}}</p>
                             <br>
-                            <p>Arrival Time: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
+                            <p>Arrives: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
                             <br>
-                            <p>Flight Duration: {{flight.duration | duration}}</p>
+                            <p>Total Time: {{flight.duration | duration}}</p>
                             <br>
                             <p ng-show="flight.connectionDuration">Layover Duration: {{flight.connectionDuration}} minutes</p>
                         </li>
@@ -72,11 +78,11 @@
                             <br>
                             <p>Destination: {{flight.leg[0].destination}}</p>
                             <br>
-                            <p>Departure Time: {{flight.leg[0].departureTime | date: 'medium'}}</p>
+                            <p>Departs: {{flight.leg[0].departureTime | date: 'medium'}}</p>
                             <br>
-                            <p>Arrival Time: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
+                            <p>Arrives: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
                             <br>
-                            <p>Flight Duration: {{flight.duration | duration}}</p>
+                            <p>Total Time: {{flight.duration | duration}}</p>
                             <br>
                             <p ng-show="flight.connectionDuration">Layover Duration: {{flight.connectionDuration}} minutes</p>
                         </li>
@@ -86,14 +92,3 @@
         </ul>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
