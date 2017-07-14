@@ -35,11 +35,11 @@
     <div ng-show="$ctrl.selectedFlights.length">
         <h4 >Outgoing: {{$ctrl.selectedFlights[0].leg[0].origin}} -
                                                         {{$ctrl.selectedFlights[0].leg[0].destination}} |
-                                                        Duration: {{$ctrl.selectedFlights[0].duration}} mins
+                                                        Flight Time: {{$ctrl.selectedFlights[0].duration | duration}}
         </h4>
         <h4 ng-show="$ctrl.selectedFlights[1]">Return: {{$ctrl.selectedFlights[1].leg[0].origin}} -
                                                         {{$ctrl.selectedFlights[1].leg[0].destination}} |
-                                                        Duration: {{$ctrl.selectedFlights[1].duration}} mins
+                                                        Flight Time: {{$ctrl.selectedFlights[1].duration | duration}}
         </h4>
 
     </div>
