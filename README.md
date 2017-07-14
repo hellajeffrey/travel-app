@@ -15,6 +15,8 @@ ___
 
 * AngularJS on Rails
 
+* Google Flights API - QPX Express
+
 * Postgresql/Active Record
 
 * Boostrap
@@ -38,6 +40,11 @@ ___
 ___
 
 ## [User Story Board](https://trello.com/b/DSEXlAGv/flights-tonight)
+
+___
+
+## Wire Frames and Screenshots
+![Vagabond Cities Index Page Screenshot](http://i.imgur.com/b4eYEDd.png)
 
 ___
 
