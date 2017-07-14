@@ -1,16 +1,4 @@
 var IATA = {
-369: {
-name: "Atmautluak Airport",
-city: "Atmautluak",
-country: "United States",
-iata: "369",
-icao: "\N",
-latitude: "60.866667",
-longitude: "-162.273056",
-altitude: "18",
-timezone: "-10",
-dst: "A"
-},
 GKA: {
 name: "Goroka",
 city: "Goroka",
