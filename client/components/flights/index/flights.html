@@ -69,7 +69,7 @@
     <div id="searchResults">
         <ul class="list-group" ng-repeat="trip in $ctrl.results">
             <li class="list-group-item price">
-                Sale Total: {{trip.pricing[0].saleTotal.substring(3) | currency}}
+                Total: {{trip.pricing[0].saleTotal.substring(3) | currency}}
             </li>
             <li class="list-group-item">
                 <ul class="list-group">
@@ -83,7 +83,7 @@
                             <br>
                             <p>Arrives: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
                             <br>
-                            <p>Total Time: {{flight.duration | duration}}</p>
+                            <p>Total Flight Time: {{flight.duration | duration}}</p>
                             <br>
                             <p ng-show="flight.connectionDuration">Layover Duration: {{flight.connectionDuration}} minutes</p>
                         </li>
@@ -98,7 +98,7 @@
                             <br>
                             <p>Arrives: {{flight.leg[0].arrivalTime | date: 'medium'}}</p>
                             <br>
-                            <p>Total Time: {{flight.duration | duration}}</p>
+                            <p>Total Flight Time: {{flight.duration | duration}}</p>
                             <br>
                             <p ng-show="flight.connectionDuration">Layover Duration: {{flight.connectionDuration}} minutes</p>
                         </li>

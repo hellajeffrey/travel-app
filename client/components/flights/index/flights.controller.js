@@ -1,9 +1,10 @@
+var IataCodes = require('./IATA.js');
 FlightsController.$inject = ["flightsService"];
 function FlightsController(flightsService) {
   var vm = this;
   vm.getFlight = getFlight;
   vm.origin = 'ATL';
-  vm.destination = 'AMS';
+  vm.destination = 'CDG';
   vm.date = '2017-10-10';
   vm.maxStops = 0;
   vm.passengers = 1;
@@ -15,6 +16,8 @@ function FlightsController(flightsService) {
   vm.showSelectedFlights = {};
   vm.selectedFlights = [];
   vm.isLoading = false;
+  vm.codes = IataCodes;
+
 
   activate();
 
