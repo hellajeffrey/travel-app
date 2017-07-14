@@ -61,7 +61,20 @@ ___
 
 * CRUD functionality on User model
 
- 
+
 ___
 
+
+# Future Development
+
+* Top Cities Section
+
+* Finish Watched Flights feature
+
+* Add purchase flights feature
+
+* Anchor Scroll on search page
+
+* Autocompletion on forms
+___
 
