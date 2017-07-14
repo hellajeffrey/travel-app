@@ -4,7 +4,7 @@ function FlightsController(flightsService) {
   var vm = this;
   vm.getFlight = getFlight;
   vm.origin = 'ATL';
-  vm.destination = 'AMS';
+  vm.destination = 'CDG';
   vm.date = '2017-10-10';
   vm.maxStops = 0;
   vm.passengers = 1;
