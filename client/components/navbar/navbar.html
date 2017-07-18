@@ -17,7 +17,7 @@
     <ul class="nav navbar-nav navbar-right">
       <ul class="nav navbar-nav">
         <div ng-show="$ctrl.user.id">
-          <li><a ui-sref="profile">{{$ctrl.user.name}} &emsp;</a></li>
+          <li><a ui-sref="profile">{{$ctrl.user.email}} &emsp;</a></li>
           <li><a ng-click="$ctrl.signOut()">Sign Out</a></li>
         </div>
         <div ng-hide="$ctrl.user.id">
